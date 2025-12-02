@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MV-MONT Poprad – zasklenie balkónov, rolety, žalúzie, terasy, balkónové zábradlia a siete proti hmyzu. Kvalitné presklenia a tienenie s rýchlou montážou a osobným prístupom.">
+  <title>MV-MONT | Zasklenie balkónov a tienenie Poprad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #2f80ed;
+      --dark: #1f2933;
+      --gray: #f2f4f7;
+      --mid: #4b5563;
+      --light: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      color: var(--dark);
+      background: #fafbfc;
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 18px rgba(0,0,0,0.06);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      gap: 20px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      color: var(--dark);
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: flex-end;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu a {
+      padding: 8px 10px;
+      font-weight: 500;
+      color: var(--mid);
+    }
+
+    .menu a:hover, .menu a:focus {
+      color: var(--accent);
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .burger span {
+      width: 26px;
+      height: 3px;
+      background: var(--dark);
+      border-radius: 4px;
+    }
+
+    main { overflow-x: hidden; }
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      align-items: center;
+      gap: 40px;
+      padding: 100px 20px 80px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 46px);
+      margin: 0 0 16px;
+      line-height: 1.2;
+      color: var(--dark);
+    }
+
+    .hero p {
+      margin: 0 0 18px;
+      color: var(--mid);
+      font-size: 17px;
+    }
+
+    .benefits {
+      margin: 14px 0 24px;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .benefits li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    .benefits span {
+      display: inline-flex;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 2px solid var(--accent);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn.secondary {
+      background: #fff;
+      color: var(--accent);
+    }
+
+    .btn:hover, .btn:focus {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(47, 128, 237, 0.2);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 320px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, #e0f0ff, #eef3fb);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      filter: saturate(1.05);
+    }
+
+    .hero-visual::after {
+      content: "Balkón s celoročným využitím";
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      background: rgba(255,255,255,0.85);
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      color: var(--dark);
+      box-shadow: var(--shadow);
+    }
+
+    .section h2 {
+      margin: 0 0 16px;
+      font-size: clamp(26px, 4vw, 34px);
+      color: var(--dark);
+    }
+
+    .section p.lead {
+      color: var(--mid);
+      max-width: 720px;
+    }
+
+    .why-grid, .services-grid, .cert-grid, .reviews-grid, .contact-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid #edf0f5;
+    }
+
+    .icon-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 30px;
+    }
+
+    .service-card h3 {
+      margin: 0 0 6px;
+      font-size: 20px;
+    }
+
+    .service-card p {
+      margin: 0 0 12px;
+      color: var(--mid);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .chips li {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--gray);
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 13px;
+    }
+
+    .link-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .cert-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: 24px;
+    }
+
+    .cert-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+
+    .cert-img {
+      height: 160px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #d7eaff, #eef2ff);
+      display: grid;
+      place-items: center;
+      color: var(--mid);
+      font-weight: 600;
+      border: 1px dashed #bcd5f5;
+    }
+
+    .reviews-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 28px;
+    }
+
+    .review-card strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    blockquote {
+      margin: 0;
+      font-style: italic;
+      color: var(--dark);
+    }
+
+    .contact-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      align-items: start;
+      margin-top: 24px;
+      gap: 24px;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 10px;
+      color: var(--mid);
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+    }
+
+    label {
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #d6dbe3;
+      background: #fff;
+      font-family: inherit;
+      font-size: 15px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--accent);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.15);
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    .map-placeholder {
+      height: 220px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid #e3e7ef;
+    }
+
+    footer {
+      background: #0f1724;
+      color: #d5d8e0;
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+
+    .footer-inner h4 {
+      margin: 0 0 10px;
+      color: #fff;
+    }
+
+    .footer-links,
+    .footer-contact {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-links a { color: #d5d8e0; }
+    .footer-links a:hover { color: #fff; }
+
+    .social { display: flex; gap: 10px; align-items: center; }
+    .badge { background: rgba(255,255,255,0.12); padding: 6px 10px; border-radius: 999px; font-weight: 600; }
+
+    @media (max-width: 900px) {
+      .menu { display: none; width: 100%; }
+      .menu.open { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+      .burger { display: flex; }
+      .nav { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Hlavné menu">
+      <div class="logo">MV-MONT</div>
+      <div class="burger" aria-label="Menu" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="menu">
+        <li><a href="#domov">Domov</a></li>
+        <li><a href="#ponuka">Ponuka</a></li>
+        <li><a href="#bezramove">Bezrámové presklenia</a></li>
+        <li><a href="#ramove">Rámové presklenia</a></li>
+        <li><a href="#rolety">Rolety</a></li>
+        <li><a href="#zaluzie">Žalúzie</a></li>
+        <li><a href="#terasy">Terasy</a></li>
+        <li><a href="#zabradlia">Balkónové zábradlia</a></li>
+        <li><a href="#siete">Siete proti hmyzu</a></li>
+        <li><a href="#certifikat">Certifikát</a></li>
+        <li><a href="#referencie">Referencie</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section hero" id="domov">
+      <div>
+        <p class="badge">Lokálna firma z Popradu</p>
+        <h1>Zasklenie balkóna a tienenie, s ktorým budete spokojní roky</h1>
+        <p>Na mieru pre váš balkón, lodžiu alebo terasu. Celoročné využitie, menej hluku, viac pohodlia a úspor. Kvalitné presklenia, rolety, žalúzie a siete proti hmyzu z Popradu.</p>
+        <ul class="benefits">
+          <li><span>✓</span>Montáž kedykoľvek počas celého roka</li>
+          <li><span>✓</span>Použitie kvalitných a certifikovaných materiálov</li>
+          <li><span>✓</span>Úspora tepelnej energie až 40 %</li>
+          <li><span>✓</span>Ochrana pred poveternostnými vplyvmi, snehom a dažďom</li>
+          <li><span>✓</span>Ochrana pred prachom a vtáctvom</li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn primary" href="#kontakt">Nezáväzná cenová ponuka</a>
+          <a class="btn secondary" href="#ponuka">Pozrieť ponuku služieb</a>
+        </div>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Moderné presklenie balkóna s tienením"></div>
+    </section>
+
+    <section class="section" id="preco">
+      <h2>Prečo sa oplatí zaskliť balkón s MV-MONT?</h2>
+      <p class="lead">Spoľahlivé materiály, rýchla realizácia a ľudský prístup. Sme menšia firma z Popradu a každú zákazku riešime tak, akoby sme ju robili pre seba.</p>
+      <div class="why-grid">
+        <div class="card">
+          <div class="icon-circle">⚡</div>
+          <h3>Rýchla realizácia</h3>
+          <p>V jeden deň zamerané, na ďalší deň hotové – podľa možností zákazníka a typu zákazky.</p>
+        </div>
+        <div class="card">
+          <div class="icon-circle">🛠</div>
+          <h3>Kvalitné materiály</h3>
+          <p>Naše výrobky sú certifikované a navrhnuté tak, aby vám slúžili dlhé roky.</p>
+        </div>
+        <div class="card">
+          <div class="icon-circle">🌡</div>
+          <h3>Úspora energie</h3>
+          <p>Zasklený balkón znižuje tepelné straty a chráni pred prievanom aj hlukom zvonka.</p>
+        </div>
+        <div class="card">
+          <div class="icon-circle">📍</div>
+          <h3>Lokálna firma z Popradu</h3>
+          <p>Sme menšia firma, ktorá si zakladá na osobnom prístupe a férovom jednaní.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ponuka">
+      <h2>Naša ponuka</h2>
+      <p class="lead">Zasklenia, tienenie aj doplnky na jednom mieste. Vyberte si riešenie, ktoré vám prinesie viac pohodlia a bezpečia.</p>
+      <div class="services-grid">
+        <article class="card service-card" id="bezramove">
+          <div class="icon-circle">🪟</div>
+          <h3>Bezrámové presklenia</h3>
+          <p>Bezrámový systém patrí medzi najmodernejšie spôsoby zasklenia balkónov a lodžií. Sklo nie je prerušované zvislými profilmi, takže máte krásny výhľad a moderný vzhľad fasády.</p>
+          <ul class="chips">
+            <li>Elegantný a moderný dizajn</li>
+            <li>Jednoduché čistenie a údržba</li>
+            <li>Vhodné pre balkóny a lodžie</li>
+          </ul>
+          <a class="link-cta" href="#kontakt">Zistiť viac →</a>
+        </article>
+        <article class="card service-card" id="ramove">
+          <div class="icon-circle">🧭</div>
+          <h3>Rámové presklenia</h3>
+          <p>Rámový systém sa vyznačuje rýchlym a ľahkým ovládaním, pretože pohyb sklenených tabúľ je riešený posúvaním po vodiacej koľajnici.</p>
+          <ul class="chips">
+            <li>Odolné a praktické riešenie</li>
+            <li>Vhodné aj pre väčšie plochy</li>
+            <li>Jednoduchá manipulácia</li>
+          </ul>
+          <a class="link-cta" href="#kontakt">Zistiť viac →</a>
+        </article>
+        <article class="card service-card" id="rolety">
+          <div class="icon-circle">🛡</div>
+          <h3>Vonkajšie a vnútorné rolety</h3>
+          <p>Rolety majú výborné izolačné vlastnosti. V lete chránia interiér proti prehrievaniu, v zime znižujú tepelné straty a zároveň poskytujú súkromie.</p>
+          <ul class="chips">
+            <li>Tepelná a zvuková izolácia</li>
+            <li>Regulácia svetla podľa potreby</li>
+            <li>Vyššia bezpečnosť a súkromie</li>
+          </ul>
+          <a class="link-cta" href="#kontakt">Zistiť viac →</a>
+        </article>
+        <article class="card service-card" id="zaluzie">
+          <div class="icon-circle">🌞</div>
+          <h3>Žalúzie</h3>
+          <p>Horizontálne žalúzie sú moderné a praktické riešenie pre reguláciu svetla. Vertikálne žalúzie sú elegantným doplnkom vhodným najmä do kancelárií a väčších presklených plôch.</p>
+          <ul class="chips">
+            <li>Presná regulácia denného svetla</li>
+            <li>Široký výber farieb a materiálov</li>
+            <li>Jednoduchá údržba</li>
+          </ul>
+          <a class="link-cta" href="#kontakt">Zistiť viac →</a>
+        </article>
+        <article class="card service-card" id="terasy">
+          <div class="icon-circle">🏡</div>
+          <h3>Terasy</h3>
+          <p>Zastrešenie a zasklenie terasy vám umožní využívať ju počas celého roka. Znižuje náklady na energiu a chráni pred dažďom, snehom aj vetrom.</p>
+          <ul class="chips">
+            <li>Celoročné využitie exteriéru</li>
+            <li>Ochrana nábytku pred poveternostnými vplyvmi</li>
+            <li>Príjemný priestor na relax</li>
+          </ul>
+          <a class="link-cta" href="#kontakt">Zistiť viac →</a>
+        </article>
+        <article class="card service-card" id="zabradlia">
+          <div class="icon-circle">🧱</div>
+          <h3>Balkónové zábradlia</h3>
+          <p>Dodávame a montujeme balkónové zábradlia, ktoré spájajú bezpečnosť s moderným dizajnom. Vhodné pre bytové aj rodinné domy.</p>
+          <ul class="chips">
+            <li>Bezpečné riešenie podľa noriem</li>
+            <li>Rôzne dizajny a materiály</li>
+            <li>Možnosť kombinácie so zasklením</li>
+          </ul>
+          <a class="link-cta" href="#kontakt">Zistiť viac →</a>
+        </article>
+        <article class="card service-card" id="siete">
+          <div class="icon-circle">🦟</div>
+          <h3>Siete proti hmyzu</h3>
+          <p>Siete proti hmyzu zabraňujú fyzickému prístupu hmyzu do bytu, pričom neobmedzujú prúdenie vzduchu.</p>
+          <ul class="chips">
+            <li>Ochrana pred komármi a hmyzom</li>
+            <li>Vhodné na okná aj dvere</li>
+            <li>Diskrétny vzhľad</li>
+          </ul>
+          <a class="link-cta" href="#kontakt">Zistiť viac →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="certifikat">
+      <h2>Certifikované výrobky</h2>
+      <p class="lead">Naše výrobky sú certifikované a spĺňajú platné normy. Vďaka kvalitným materiálom a profesionálnej montáži máte istotu, že vaše riešenie bude bezpečné a trvácne.</p>
+      <div class="cert-grid">
+        <div class="card cert-card">
+          <div class="cert-img" role="img" aria-label="Certifikát kvality">Náhľad certifikátu</div>
+          <strong>Certifikát kvality</strong>
+          <span>ISO a európske normy</span>
+        </div>
+        <div class="card cert-card">
+          <div class="cert-img" role="img" aria-label="Bezpečnostný certifikát">Bezpečnostný certifikát</div>
+          <strong>Bezpečnostné štandardy</strong>
+          <span>Testované systémy a materiály</span>
+        </div>
+        <div class="card cert-card">
+          <div class="cert-img" role="img" aria-label="Energetická úspora">Energetická úspora</div>
+          <strong>Úspora energie</strong>
+          <span>Úspora tepla až 40 %</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="referencie">
+      <h2>Čo o nás hovoria zákazníci</h2>
+      <p class="lead">Reálne skúsenosti ľudí, ktorí už využívajú zasklený balkón, rolety alebo siete proti hmyzu od MV-MONT.</p>
+      <div class="reviews-grid">
+        <div class="card review-card">
+          <strong>Google recenzia, hodnotenie 5/5</strong>
+          <blockquote>„Maximálna spokojnosť so zasklením balkóna. Odporúčam všetkými desiatimi! Mladý pán veľmi ochotný a šikovný. V jeden deň pomerané, na ďalší deň hotové.“</blockquote>
+          <p>— Ada Cehulová</p>
+        </div>
+        <div class="card review-card">
+          <strong>Referencie od zákazníkov</strong>
+          <blockquote>„Potrebovali sme tienenie na južnú terasu. Rýchla komunikácia, presné meranie a montáž bez neporiadku. Užijeme si leto bez horúčav.“</blockquote>
+          <p>— Peter, Poprad</p>
+        </div>
+        <div class="card review-card">
+          <strong>Referencie od zákazníkov</strong>
+          <blockquote>„Siete proti hmyzu na mieru sadli hneď na prvýkrát. Oceňujem trpezlivosť pri výbere materiálov aj férovú cenu.“</blockquote>
+          <p>— Lucia, Svit</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt">
+      <h2>Kontaktujte nás</h2>
+      <p class="lead">Máte záujem o nezáväznú cenovú ponuku na zasklenie balkóna, tienenie alebo siete proti hmyzu? Zavolajte nám alebo nám napíšte, ozveme sa vám čo najskôr.</p>
+      <div class="contact-grid">
+        <div class="card contact-info">
+          <div>
+            <strong>MV-MONT</strong><br>
+            Letná 3370/21<br>
+            058 01 Poprad
+          </div>
+          <div>
+            Telefón: <a href="tel:+421911880212">0911 880 212</a><br>
+            E-mail: <a href="mailto:mvmont.pp@gmail.com">mvmont.pp@gmail.com</a>
+          </div>
+          <div class="map-placeholder">
+            <iframe title="Mapa Popradu" src="https://www.openstreetmap.org/export/embed.html?bbox=20.249%2C48.984%2C20.329%2C49.064&amp;layer=mapnik" style="border:0; width:100%; height:100%;"></iframe>
+          </div>
+        </div>
+        <div class="card">
+          <form>
+            <label for="name">Meno a priezvisko</label>
+            <input type="text" id="name" name="name" placeholder="Zadajte meno" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="vas@email.sk" required>
+
+            <label for="phone">Telefón</label>
+            <input type="tel" id="phone" name="phone" placeholder="0911 880 212" required>
+
+            <label for="city">Lokalita (mesto/obec)</label>
+            <input type="text" id="city" name="city" placeholder="Poprad, Svit, ...">
+
+            <label for="message">Správa</label>
+            <textarea id="message" name="message" placeholder="Typ služby, balkón, terasa, tienenie..." required></textarea>
+
+            <button class="btn primary" type="submit">Odoslať dopyt</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h4>© MV-MONT, 2025</h4>
+        <p>Obchod so zasklením balkónov, roletami, žalúziami a sieťami proti hmyzu v Poprade.</p>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul class="footer-links">
+          <li><a href="#domov">Domov</a></li>
+          <li><a href="#ponuka">Ponuka</a></li>
+          <li><a href="#certifikat">Certifikát</a></li>
+          <li><a href="#referencie">Referencie</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul class="footer-contact">
+          <li><a href="tel:+421911880212">0911 880 212</a></li>
+          <li><a href="mailto:mvmont.pp@gmail.com">mvmont.pp@gmail.com</a></li>
+        </ul>
+        <div class="social">
+          <span>Sledujte nás na sociálnych sieťach</span>
+          <span class="badge">FB</span>
+          <span class="badge">IG</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const burger = document.querySelector('.burger');
+    const menu = document.querySelector('.menu');
+
+    const toggleMenu = () => menu.classList.toggle('open');
+
+    burger.addEventListener('click', toggleMenu);
+    burger.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    // Close menu on link click (mobile)
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (menu.classList.contains('open')) {
+          menu.classList.remove('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
